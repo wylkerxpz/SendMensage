@@ -3,6 +3,8 @@ package br.com.nwms.myapplication;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import java.util.ArrayList;
+
 /**
  * Created by tundealao on 29/03/15.
  */
@@ -18,9 +20,9 @@ public class UserLocalStore {
 
     public void storeUserData(User user) {
         SharedPreferences.Editor userLocalDatabaseEditor = userLocalDatabase.edit();
-        userLocalDatabaseEditor.putString("name", user.name);
         userLocalDatabaseEditor.putString("username", user.username);
         userLocalDatabaseEditor.putString("password", user.password);
+        userLocalDatabaseEditor.putString("listaDisciplinas", user.listaDisciplinas);
         userLocalDatabaseEditor.commit();
     }
 
@@ -41,12 +43,11 @@ public class UserLocalStore {
             return null;
         }
 
-        String name = userLocalDatabase.getString("name", "");
         String username = userLocalDatabase.getString("username", "");
         String password = userLocalDatabase.getString("password", "");
-        int age = userLocalDatabase.getInt("age", -1);
+        String listaDisciplinas = userLocalDatabase.getString("listaDisciplinas", "");
 
-        User user = new User(name, username, password);
+        User user = new User(username, password, listaDisciplinas);
         return user;
     }
 }

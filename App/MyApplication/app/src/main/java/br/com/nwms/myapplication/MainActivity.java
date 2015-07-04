@@ -17,13 +17,17 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 
 public class MainActivity extends ActionBarActivity implements View.OnClickListener{
 
     UserLocalStore userLocalStore;
-    EditText etName, etUsername;
+    EditText etUsername;
     Button bLogout;
 
     MyCustomAdapter dataAdapter = null;
@@ -34,17 +38,11 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         etUsername = (EditText) findViewById(R.id.etUsername);
-        etName = (EditText) findViewById(R.id.etName);
         bLogout = (Button) findViewById(R.id.bLogout);
 
         bLogout.setOnClickListener(this);
 
         userLocalStore = new UserLocalStore(this);
-
-        //Generate list View from ArrayList
-        displayListView();
-
-        checkButtonClick();
     }
 
     @Override
@@ -63,7 +61,9 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     protected void onStart() {
         super.onStart();
         if (authenticate() == true) {
-            displayUserDetails();
+            //Generate list View from ArrayList
+            displayListView();
+            checkButtonClick();
         }
     }
 
@@ -76,66 +76,59 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         return true;
     }
 
-    private void displayUserDetails() {
+    private void displayListView() {
         User user = userLocalStore.getLoggedInUser();
         etUsername.setText(user.username);
-        etName.setText(user.name);
-    }
 
-    private void displayListView() {
+        JSONObject jsonObj = null;
+        try {
+            jsonObj = new JSONObject(user.listaDisciplinas);
+            JSONArray jArray = jsonObj.getJSONArray("disciplinas");
 
-        //Array list of countries
-        ArrayList<Country> countryList = new ArrayList<Country>();
-        Country country = new Country("AFG","Afghanistan",false);
-        countryList.add(country);
-        country = new Country("ALB","Albania",true);
-        countryList.add(country);
-        country = new Country("DZA","Algeria",false);
-        countryList.add(country);
-        country = new Country("ASM","American Samoa",true);
-        countryList.add(country);
-        country = new Country("AND","Andorra",true);
-        countryList.add(country);
-        country = new Country("AGO","Angola",false);
-        countryList.add(country);
-        country = new Country("AIA","Anguilla",false);
-        countryList.add(country);
+            ArrayList<Disciplina> listaDisciplina = new ArrayList<>();
 
-        //create an ArrayAdaptar from the String Array
-        dataAdapter = new MyCustomAdapter(this,
-                R.layout.disciplinas_info, countryList);
-        ListView listView = (ListView) findViewById(R.id.listView1);
-        // Assign adapter to ListView
-        listView.setAdapter(dataAdapter);
-
-
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View view,
-                                    int position, long id) {
-                // When clicked, show a toast with the TextView text
-                Country country = (Country) parent.getItemAtPosition(position);
-                Toast.makeText(getApplicationContext(),
-                        "Clicked on Row: " + country.getName(),
-                        Toast.LENGTH_LONG).show();
+            for (int i = 0; i < jArray.length(); i++) {
+                JSONObject jObj = jArray.getJSONObject(i);
+                Disciplina disciplina = new Disciplina(jObj.getInt("disciplina_pk"), jObj.getString("disciplina_nome"), jObj.getBoolean("selected"));
+                listaDisciplina.add(disciplina);
             }
-        });
 
+            //create an ArrayAdaptar from the String Array
+            dataAdapter = new MyCustomAdapter(this, R.layout.disciplinas_info, listaDisciplina);
+            ListView listView = (ListView) findViewById(R.id.listView1);
+            // Assign adapter to ListView
+            listView.setAdapter(dataAdapter);
+
+
+            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                public void onItemClick(AdapterView<?> parent, View view,
+                                        int position, long id) {
+                    // When clicked, show a toast with the TextView text
+                    Disciplina disciplina = (Disciplina) parent.getItemAtPosition(position);
+                    Toast.makeText(getApplicationContext(),
+                            "Clicked on Row: " + disciplina.getDisciplina_nome(),
+                            Toast.LENGTH_LONG).show();
+                }
+            });
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
-    private class MyCustomAdapter extends ArrayAdapter<Country> {
+    private class MyCustomAdapter extends ArrayAdapter<Disciplina> {
 
-        private ArrayList<Country> countryList;
+        private ArrayList<Disciplina> disciplinaList;
 
         public MyCustomAdapter(Context context, int textViewResourceId,
-                               ArrayList<Country> countryList) {
-            super(context, textViewResourceId, countryList);
-            this.countryList = new ArrayList<Country>();
-            this.countryList.addAll(countryList);
+                               ArrayList<Disciplina> disciplinaList) {
+            super(context, textViewResourceId, disciplinaList);
+            this.disciplinaList = new ArrayList<Disciplina>();
+            this.disciplinaList.addAll(disciplinaList);
         }
 
         private class ViewHolder {
-            TextView code;
-            CheckBox name;
+            //TextView disciplina_pk;
+            CheckBox disciplina_nome;
         }
 
         @Override
@@ -150,19 +143,19 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                 convertView = vi.inflate(R.layout.disciplinas_info, null);
 
                 holder = new ViewHolder();
-                holder.code = (TextView) convertView.findViewById(R.id.code);
-                holder.name = (CheckBox) convertView.findViewById(R.id.checkBox1);
+                //holder.disciplina_pk = (TextView) convertView.findViewById(R.id.code);
+                holder.disciplina_nome = (CheckBox) convertView.findViewById(R.id.checkBox1);
                 convertView.setTag(holder);
 
-                holder.name.setOnClickListener( new View.OnClickListener() {
+                holder.disciplina_nome.setOnClickListener( new View.OnClickListener() {
                     public void onClick(View v) {
                         CheckBox cb = (CheckBox) v ;
-                        Country country = (Country) cb.getTag();
+                        Disciplina disciplina = (Disciplina) cb.getTag();
                         Toast.makeText(getApplicationContext(),
-                                "Clicked on Checkbox: " + cb.getText() +
-                                        " is " + cb.isChecked(),
+                                "Click no Checkbox: " + cb.getText() +
+                                        " e " + cb.isChecked(),
                                 Toast.LENGTH_LONG).show();
-                        country.setSelected(cb.isChecked());
+                        disciplina.setSelected(cb.isChecked());
                     }
                 });
             }
@@ -170,14 +163,13 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                 holder = (ViewHolder) convertView.getTag();
             }
 
-            Country country = countryList.get(position);
-            holder.code.setText(" (" +  country.getCode() + ")");
-            holder.name.setText(country.getName());
-            holder.name.setChecked(country.isSelected());
-            holder.name.setTag(country);
+            Disciplina disciplina = disciplinaList.get(position);
+            //holder.disciplina_pk.setText(" (" +  disciplina.getDisciplina_pk() + ")");
+            holder.disciplina_nome.setText(disciplina.getDisciplina_nome());
+            holder.disciplina_nome.setChecked(disciplina.isSelected());
+            holder.disciplina_nome.setTag(disciplina);
 
             return convertView;
-
         }
 
     }
@@ -191,13 +183,13 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             public void onClick(View v) {
 
                 StringBuffer responseText = new StringBuffer();
-                responseText.append("The following were selected...\n");
+                responseText.append("Foram selecionadas as seguintes...\n");
 
-                ArrayList<Country> countryList = dataAdapter.countryList;
-                for (int i = 0; i < countryList.size(); i++) {
-                    Country country = countryList.get(i);
-                    if (country.isSelected()) {
-                        responseText.append("\n" + country.getName());
+                ArrayList<Disciplina> disciplinaList = dataAdapter.disciplinaList;
+                for (int i = 0; i < disciplinaList.size(); i++) {
+                    Disciplina disciplina = disciplinaList.get(i);
+                    if (disciplina.isSelected()) {
+                        responseText.append("\n" + disciplina.getDisciplina_nome());
                     }
                 }
 

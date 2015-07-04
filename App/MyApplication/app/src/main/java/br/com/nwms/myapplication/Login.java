@@ -42,10 +42,6 @@ public class Login extends ActionBarActivity implements View.OnClickListener {
 
                 authenticate(user);
                 break;
-//            case R.id.tvRegisterLink:
-//                Intent registerIntent = new Intent(Login.this, Register.class);
-//                startActivity(registerIntent);
-//                break;
         }
     }
 
@@ -65,7 +61,7 @@ public class Login extends ActionBarActivity implements View.OnClickListener {
 
     private void showErrorMessage() {
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(Login.this);
-        dialogBuilder.setMessage("Incorrect user details");
+        dialogBuilder.setMessage("Usuário ou senha inválido");
         dialogBuilder.setPositiveButton("Ok", null);
         dialogBuilder.show();
     }

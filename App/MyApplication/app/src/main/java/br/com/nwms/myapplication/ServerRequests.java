@@ -30,74 +30,14 @@ public class ServerRequests {
     public ServerRequests(Context context) {
         progressDialog = new ProgressDialog(context);
         progressDialog.setCancelable(false);
-        progressDialog.setTitle("Processing...");
-        progressDialog.setMessage("Please wait...");
+        progressDialog.setTitle("Processando...");
+        progressDialog.setMessage("Aguarde...");
     }
-
-//    public void storeUserDataInBackground(User user,GetUserCallback userCallBack) {
-//        progressDialog.show();
-//        new StoreUserDataAsyncTask(user, userCallBack).execute();
-//    }
 
     public void fetchUserDataAsyncTask(User user, GetUserCallback userCallBack) {
         progressDialog.show();
         new fetchUserDataAsyncTask(user, userCallBack).execute();
     }
-
-    /**
-     * parameter sent to task upon execution progress published during
-     * background computation result of the background computation
-     */
-
-//    public class StoreUserDataAsyncTask extends AsyncTask<Void, Void, Void> {
-//        User user;
-//        GetUserCallback userCallBack;
-//
-//        public StoreUserDataAsyncTask(User user, GetUserCallback userCallBack) {
-//            this.user = user;
-//            this.userCallBack = userCallBack;
-//        }
-//
-//        @Override
-//        protected Void doInBackground(Void... params) {
-//            ArrayList<NameValuePair> dataToSend = new ArrayList<>();
-//            dataToSend.add(new BasicNameValuePair("name", user.name));
-//            dataToSend.add(new BasicNameValuePair("username", user.username));
-//            dataToSend.add(new BasicNameValuePair("password", user.password));
-//
-//            HttpParams httpRequestParams = getHttpRequestParams();
-//
-//            HttpClient client = new DefaultHttpClient(httpRequestParams);
-//            HttpPost post = new HttpPost(SERVER_ADDRESS
-//                    + "Register.php");
-//
-//            try {
-//                post.setEntity(new UrlEncodedFormEntity(dataToSend));
-//                client.execute(post);
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//            }
-//
-//            return null;
-//        }
-//
-//        private HttpParams getHttpRequestParams() {
-//            HttpParams httpRequestParams = new BasicHttpParams();
-//            HttpConnectionParams.setConnectionTimeout(httpRequestParams,
-//                    CONNECTION_TIMEOUT);
-//            HttpConnectionParams.setSoTimeout(httpRequestParams,
-//                    CONNECTION_TIMEOUT);
-//            return httpRequestParams;
-//        }
-//
-//        @Override
-//        protected void onPostExecute(Void result) {
-//            super.onPostExecute(result);
-//            progressDialog.dismiss();
-//            userCallBack.done(null);
-//        }
-//
-//    }
 
     public class fetchUserDataAsyncTask extends AsyncTask<Void, Void, User> {
         User user;
@@ -134,13 +74,12 @@ public class ServerRequests {
                 String result = EntityUtils.toString(entity);
                 JSONObject jObject = new JSONObject(result);
 
-                if (jObject.length() != 0){
-                    Log.v("happened", "2");
-                    String name = jObject.getString("docente_nome");
+                Log.v("happened", "2");
+                String listaDisciplinas = jObject.getString("info");
 
-                    returnedUser = new User(name, user.username,
-                            user.password);
-                }
+                //jObject.getString("listaDisciplinas");
+                returnedUser = new User(user.username,user.password,listaDisciplinas);
+
 
             } catch (Exception e) {
                 e.printStackTrace();
