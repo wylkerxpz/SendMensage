@@ -25,7 +25,6 @@ import java.util.ArrayList;
 public class ServerRequests {
     ProgressDialog progressDialog;
     public static final int CONNECTION_TIMEOUT = 1000 * 15;
-    public static final String SERVER_ADDRESS = "http://www.consertar.srv.br/login/";
 
     public ServerRequests(Context context) {
         progressDialog = new ProgressDialog(context);
@@ -61,8 +60,7 @@ public class ServerRequests {
                     CONNECTION_TIMEOUT);
 
             HttpClient client = new DefaultHttpClient(httpRequestParams);
-            HttpPost post = new HttpPost(SERVER_ADDRESS
-                    + "FetchUserData.php");
+            HttpPost post = new HttpPost(Config.LOGIN_URL);
 
             User returnedUser = null;
 
@@ -75,10 +73,11 @@ public class ServerRequests {
                 JSONObject jObject = new JSONObject(result);
 
                 Log.v("happened", "2");
+                int usuario_pk = jObject.getInt("docente_pk");
+                String usuario_nome = jObject.getString("docente_nome");
                 String listaDisciplinas = jObject.getString("info");
 
-                //jObject.getString("listaDisciplinas");
-                returnedUser = new User(user.username,user.password,listaDisciplinas);
+                returnedUser = new User(usuario_pk,user.username,user.password,usuario_nome,listaDisciplinas);
 
 
             } catch (Exception e) {

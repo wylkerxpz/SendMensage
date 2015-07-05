@@ -3,6 +3,11 @@
     package="br.com.nwms.myapplication" >
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <application
         android:allowBackup="true"
@@ -21,6 +26,10 @@
         <activity
             android:name=".Login"
             android:label="@string/title_activity_login" />
+        <activity
+            android:name=".Send"
+            android:screenOrientation="portrait" >
+        </activity>
     </application>
 
 </manifest>

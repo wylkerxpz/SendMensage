@@ -20,8 +20,10 @@ public class UserLocalStore {
 
     public void storeUserData(User user) {
         SharedPreferences.Editor userLocalDatabaseEditor = userLocalDatabase.edit();
+        userLocalDatabaseEditor.putInt("usuario_pk", user.usuario_pk);
         userLocalDatabaseEditor.putString("username", user.username);
         userLocalDatabaseEditor.putString("password", user.password);
+        userLocalDatabaseEditor.putString("usuario_nome", user.usuario_nome);
         userLocalDatabaseEditor.putString("listaDisciplinas", user.listaDisciplinas);
         userLocalDatabaseEditor.commit();
     }
@@ -43,11 +45,13 @@ public class UserLocalStore {
             return null;
         }
 
+        int usuario_pk = userLocalDatabase.getInt("usuario_pk", -1);
         String username = userLocalDatabase.getString("username", "");
         String password = userLocalDatabase.getString("password", "");
+        String usuario_nome = userLocalDatabase.getString("usuario_nome", "");
         String listaDisciplinas = userLocalDatabase.getString("listaDisciplinas", "");
 
-        User user = new User(username, password, listaDisciplinas);
+        User user = new User(usuario_pk, username, password, usuario_nome, listaDisciplinas);
         return user;
     }
 }

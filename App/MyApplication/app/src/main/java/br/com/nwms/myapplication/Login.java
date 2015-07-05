@@ -61,7 +61,7 @@ public class Login extends ActionBarActivity implements View.OnClickListener {
 
     private void showErrorMessage() {
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(Login.this);
-        dialogBuilder.setMessage("Usuário ou senha inválido");
+        dialogBuilder.setMessage("Usuario ou senha invalido");
         dialogBuilder.setPositiveButton("Ok", null);
         dialogBuilder.show();
     }
