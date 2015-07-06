@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="F:\UFG\Desenvolvimento para dispositivos moveis\Login\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\libs\internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="23.0.0 rc2"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="F:\UFG\Desenvolvimento para dispositivos moveis\Login\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.0-438f0dc6001d9b8b9ecf3493eba6b34e97ecb3fc.jar" />
+    </item>
+    <item
+        jar="F:\UFG\Desenvolvimento para dispositivos moveis\Trabalho Final\SendMensage\App\Login\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0 rc2"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="F:\UFG\Desenvolvimento para dispositivos moveis\Trabalho Final\SendMensage\App\Login\app\build\intermediates\pre-dexed\debug\classes-3e13f6ba9ba50d4736d7d9754c5c6cd2241eadff.jar" />
+    </item>
+    <item
+        jar="F:\UFG\Desenvolvimento para dispositivos moveis\Trabalho Final\SendMensage\App\Login\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0 rc2"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="F:\UFG\Desenvolvimento para dispositivos moveis\Trabalho Final\SendMensage\App\Login\app\build\intermediates\pre-dexed\debug\classes-88cb5732a9761218675d2d3e767bac32d085a4cc.jar" />
+    </item>
+    <item
+        jar="F:\UFG\Desenvolvimento para dispositivos moveis\Trabalho Final\SendMensage\App\Login\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\libs\internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="23.0.0 rc2"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="F:\UFG\Desenvolvimento para dispositivos moveis\Trabalho Final\SendMensage\App\Login\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.0-979c693e2ecfc02cf4c5b405c013eae555a4bc36.jar" />
+    </item>
+    <item
+        jar="F:\UFG\Desenvolvimento para dispositivos moveis\Login\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0 rc2"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="F:\UFG\Desenvolvimento para dispositivos moveis\Login\app\build\intermediates\pre-dexed\debug\classes-51096c6183207911de8345a807150ded69caf4dc.jar" />
+    </item>
+    <item
+        jar="C:\Users\NWMS\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.0\support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="23.0.0 rc2"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="F:\UFG\Desenvolvimento para dispositivos moveis\Login\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.0-8680ab99a3fd47e6c933aa302bbe9e1936d48fb8.jar" />
+    </item>
+    <item
+        jar="F:\UFG\Desenvolvimento para dispositivos moveis\Login\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0 rc2"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="F:\UFG\Desenvolvimento para dispositivos moveis\Login\app\build\intermediates\pre-dexed\debug\classes-0738658c3a7458dadc2fece0c7090b23123a589f.jar" />
+    </item>
+
+</items>

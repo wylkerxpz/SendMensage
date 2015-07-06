@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="F:\UFG\Desenvolvimento para dispositivos moveis\MyApplication\app\libs\httpmime-4.3.6.jar"
+        jumboMode="false"
+        revision="23.0.0 rc2"
+        sha1="66a39a5e37d5da40fdad6176fc24ef4316e74702">
+        <dex dex="F:\UFG\Desenvolvimento para dispositivos moveis\MyApplication\app\build\intermediates\pre-dexed\debug\httpmime-4.3.6-52b48d80ca4f00846c8770ef5b2bf768d72441e0.jar" />
+    </item>
+    <item
+        jar="F:\UFG\Desenvolvimento para dispositivos moveis\MyApplication\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\libs\internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="23.0.0 rc2"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="F:\UFG\Desenvolvimento para dispositivos moveis\MyApplication\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.0-69fe3779f02fdf572ddc16c99d9f54de126c9af6.jar" />
+    </item>
+    <item
+        jar="F:\UFG\Desenvolvimento para dispositivos moveis\MyApplication\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0 rc2"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="F:\UFG\Desenvolvimento para dispositivos moveis\MyApplication\app\build\intermediates\pre-dexed\debug\classes-370bb62e3d7f2c762ecc12fb87263ca1b71d8f63.jar" />
+    </item>
+    <item
+        jar="F:\UFG\Desenvolvimento para dispositivos moveis\MyApplication\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0 rc2"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="F:\UFG\Desenvolvimento para dispositivos moveis\MyApplication\app\build\intermediates\pre-dexed\debug\classes-2f600006bcd39e85d8a9a510c6daaa0399963164.jar" />
+    </item>
+    <item
+        jar="F:\UFG\Desenvolvimento para dispositivos moveis\MyApplication\app\libs\httpcore-4.3.3.jar"
+        jumboMode="false"
+        revision="23.0.0 rc2"
+        sha1="f91b7a4aadc5cf486df6e4634748d7dd7a73f06d">
+        <dex dex="F:\UFG\Desenvolvimento para dispositivos moveis\MyApplication\app\build\intermediates\pre-dexed\debug\httpcore-4.3.3-0919873b3cc7285d4e9e809f63ea93bb1d779d9b.jar" />
+    </item>
+    <item
+        jar="C:\Users\NWMS\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.0\support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="23.0.0 rc2"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="F:\UFG\Desenvolvimento para dispositivos moveis\MyApplication\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.0-8680ab99a3fd47e6c933aa302bbe9e1936d48fb8.jar" />
+    </item>
+    <item
+        jar="F:\UFG\Desenvolvimento para dispositivos moveis\MyApplication\app\libs\httpclient-4.3.6.jar"
+        jumboMode="false"
+        revision="23.0.0 rc2"
+        sha1="f3cf3b25e14d3bca47773e95aa85ea8fefbf8e81">
+        <dex dex="F:\UFG\Desenvolvimento para dispositivos moveis\MyApplication\app\build\intermediates\pre-dexed\debug\httpclient-4.3.6-e7f16cc583dd32ff4bbc40af7afc89b3e9d013e3.jar" />
+    </item>
+
+</items>

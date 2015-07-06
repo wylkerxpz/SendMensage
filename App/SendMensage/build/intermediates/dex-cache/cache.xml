@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="F:\UFG\Desenvolvimento para dispositivos moveis\SendMensage\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\libs\internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="23.0.0 rc2"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="F:\UFG\Desenvolvimento para dispositivos moveis\SendMensage\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.0-1ba25221a089c630fd4d7f8a0cf58fed4fd2ada1.jar" />
+    </item>
+    <item
+        jar="F:\UFG\Desenvolvimento para dispositivos moveis\SendMensage\app\libs\httpcore-4.3.3.jar"
+        jumboMode="false"
+        revision="23.0.0 rc2"
+        sha1="f91b7a4aadc5cf486df6e4634748d7dd7a73f06d">
+        <dex dex="F:\UFG\Desenvolvimento para dispositivos moveis\SendMensage\app\build\intermediates\pre-dexed\debug\httpcore-4.3.3-e7087a461353a44c16238556dd361413d5da1554.jar" />
+    </item>
+    <item
+        jar="F:\UFG\Desenvolvimento para dispositivos moveis\SendMensage\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0 rc2"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="F:\UFG\Desenvolvimento para dispositivos moveis\SendMensage\app\build\intermediates\pre-dexed\debug\classes-1d65a350e407fe88dbc12b8ab3571efe721ffe71.jar" />
+    </item>
+    <item
+        jar="C:\Users\NWMS\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.0\support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="23.0.0 rc2"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="F:\UFG\Desenvolvimento para dispositivos moveis\SendMensage\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.0-8680ab99a3fd47e6c933aa302bbe9e1936d48fb8.jar" />
+    </item>
+    <item
+        jar="F:\UFG\Desenvolvimento para dispositivos moveis\SendMensage\app\libs\httpmime-4.3.6.jar"
+        jumboMode="false"
+        revision="23.0.0 rc2"
+        sha1="66a39a5e37d5da40fdad6176fc24ef4316e74702">
+        <dex dex="F:\UFG\Desenvolvimento para dispositivos moveis\SendMensage\app\build\intermediates\pre-dexed\debug\httpmime-4.3.6-1f5d29c2aab1ee0a58c8d6b527ba643e5a9e7191.jar" />
+    </item>
+    <item
+        jar="F:\UFG\Desenvolvimento para dispositivos moveis\SendMensage\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0 rc2"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="F:\UFG\Desenvolvimento para dispositivos moveis\SendMensage\app\build\intermediates\pre-dexed\debug\classes-9e049a9e17855f613fff3c10700350b8b2643db6.jar" />
+    </item>
+    <item
+        jar="F:\UFG\Desenvolvimento para dispositivos moveis\SendMensage\app\libs\httpclient-4.3.6.jar"
+        jumboMode="false"
+        revision="23.0.0 rc2"
+        sha1="f3cf3b25e14d3bca47773e95aa85ea8fefbf8e81">
+        <dex dex="F:\UFG\Desenvolvimento para dispositivos moveis\SendMensage\app\build\intermediates\pre-dexed\debug\httpclient-4.3.6-76e65f96d09eae9b96e7abc5ac9efd38da77b1c2.jar" />
+    </item>
+
+</items>
