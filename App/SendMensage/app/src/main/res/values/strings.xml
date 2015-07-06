@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_name">SendMensage</string>
-    <string name="action_settings">Settings</string>
-    <string name="btnTakePicture">Capturar Imagem</string>
-    <string name="btnRecordVideo">Gravar Vídeo</string>
-    <string name="or">(ou)</string>
-    <string name="btnUploadToServer">Upload para o Servidor</string>
-</resources>
