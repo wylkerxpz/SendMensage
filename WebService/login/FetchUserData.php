@@ -1,6 +1,6 @@
 <?php
-    $con = mysql_connect("mysql.consertar.srv.br","wylker","Pbge6nsp@");
-    $db= mysql_select_db("dsdm");
+    $con = mysql_connect("","","");
+    $db= mysql_select_db("");
     
     $username = $_POST["username"];
     $password = $_POST["password"];
@@ -16,7 +16,7 @@
             die(json_encode($response));
         }
 
-        $query = " SELECT * FROM Docente WHERE docente_usuario = '$username' and docente_senha = '$password'";
+        $query = " SELECT * FROM docente WHERE docente_usuario = '$username' and docente_senha = '$password'";
 
         // executa a query
         $dados = mysql_query($query, $con) or die(mysql_error());
@@ -31,7 +31,7 @@
             $docente_pk = $linha['docente_pk'];
             $docente_nome = $linha['docente_nome'];
 
-            $query = "SELECT * FROM Coordenacao WHERE docente_pk = '$docente_pk'";
+            $query = "SELECT * FROM coordenacao WHERE docente_pk = '$docente_pk'";
 
             // executa a query
             $dados = mysql_query($query, $con) or die(mysql_error());
@@ -42,7 +42,7 @@
 
             if($total == 1) {
                 $coordenacao_pk = $linha['coordenacao_pk'];
-                $query = "SELECT * FROM Disciplina WHERE coordenacao_pk = '$coordenacao_pk'";
+                $query = "SELECT * FROM disciplina WHERE coordenacao_pk = '$coordenacao_pk'";
 
                 // executa a query
                 $dados = mysql_query($query, $con) or die(mysql_error());
@@ -62,7 +62,7 @@
                 die(json_encode($response));
 
             } else {
-                $query = "SELECT disciplina_pk FROM Ministra WHERE docente_pk = '$docente_pk'";
+                $query = "SELECT disciplina_pk FROM ministra WHERE docente_pk = '$docente_pk'";
 
                 // executa a query
                 $dados = mysql_query($query, $con) or die(mysql_error());
@@ -75,7 +75,7 @@
                     do {
                         $disc = $linha['disciplina_pk'];
 
-                        $queryDis = "SELECT * FROM Disciplina WHERE disciplina_pk = '$disc'";
+                        $queryDis = "SELECT * FROM disciplina WHERE disciplina_pk = '$disc'";
 
                         // executa a query
                         $dadosDis = mysql_query($queryDis, $con) or die(mysql_error());
